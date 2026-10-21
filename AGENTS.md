@@ -82,3 +82,33 @@ Everything lives in `src/macos_backup/cli.py`, organized top-to-bottom as:
 - **Password handling**: either `RESTIC_PASSWORD` (direct) or `RESTIC_PASSWORD_COMMAND` (default reads the login keychain via `security`) — never both, never the literal password on argv. When `RESTIC_PASSWORD` is set, `--password-command` is omitted entirely so restic falls back to reading the env var itself.
 - **Full Disk Access** is required by whichever Python binary `mb` resolves to (the uv tool venv's interpreter once installed), checked in `preflight()` by probing `FDA_PROBE_PATH` (default `~/Library/Mail`) and reported with `sys.executable`'s resolved path. Must be re-granted after a `uv tool install --force`/upgrade changes that interpreter's path.
 - **`mise` pins the toolchain** (`.tool-versions`): restic, uv, python, ruff, prek, jsonschema — the launchd PATH (`build_launchd_path_env`) puts mise shims first so the scheduled job resolves the same pinned `restic` as interactive use.
+
+<!-- BACKLOG.MD MCP GUIDELINES START -->
+<!-- backlog.md-instructions-version: 1.48.0 -->
+
+<CRITICAL_INSTRUCTION>
+
+## BACKLOG WORKFLOW INSTRUCTIONS
+
+This project uses Backlog.md MCP for all task and project management activities.
+
+**CRITICAL GUIDANCE**
+
+- If your client supports MCP resources, read `backlog://workflow/overview` to understand when and how to use Backlog for this project.
+- If your client only supports tools or the above request fails, call `backlog.get_backlog_instructions()` to load the tool-oriented overview. Use the `instruction` selector when you need `task-creation`, `task-execution`, or `task-finalization`.
+
+- **First time working here?** Read the overview resource IMMEDIATELY to learn the workflow
+- **Already familiar?** You should have the overview cached ("## Backlog.md Overview (MCP)")
+- **When to read it**: BEFORE creating tasks, or when you're unsure whether to track work
+
+These guides cover:
+- Decision framework for when to create tasks
+- Search-first workflow to avoid duplicates
+- Links to detailed guides for task creation, execution, and finalization
+- MCP tools reference
+
+You MUST read the overview resource to understand the complete workflow. The information is NOT summarized here.
+
+</CRITICAL_INSTRUCTION>
+
+<!-- BACKLOG.MD MCP GUIDELINES END -->
