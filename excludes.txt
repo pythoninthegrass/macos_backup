@@ -70,6 +70,11 @@ dist
 .terraform
 DerivedData
 
+# --- Regenerated or live state that changes between backup and restore ---
+.DS_Store
+*.sqlite.lock
+$HOME/Pictures/Photos Library.photoslibrary/database/search
+
 # --- Library: default-deny, then keep a short list ---
 $HOME/Library/*
 !$HOME/Library/Keychains
