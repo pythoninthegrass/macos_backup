@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>{{ label }}</string>
+
+	<key>ProgramArguments</key>
+	<array>
+		<string>{{ program }}</string>
+		<string>backup</string>
+	</array>
+
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>{{ hour }}</integer>
+		<key>Minute</key>
+		<integer>{{ minute }}</integer>
+	</dict>
+
+	<key>RunAtLoad</key>
+	<false/>
+
+	<!-- mise resolves tool versions (restic) by directory via .tool-versions, and
+	     load_settings reads .env/excludes.txt from this directory too; without
+	     this, launchd's default cwd (/) could silently pick a different restic
+	     than the one this project pins and was tested against. -->
+	<key>WorkingDirectory</key>
+	<string>{{ working_directory }}</string>
+
+	<key>ProcessType</key>
+	<string>Background</string>
+
+	<key>LowPriorityIO</key>
+	<true/>
+
+	<key>StandardOutPath</key>
+	<string>{{ log_file }}</string>
+
+	<key>StandardErrorPath</key>
+	<string>{{ log_file }}</string>
+
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>{{ path_env }}</string>
+	</dict>
+</dict>
+</plist>

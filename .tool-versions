@@ -1,0 +1,6 @@
+jsonschema 17.2.1
+prek       0.3.2
+python     3.13.14
+restic     0.19.1
+ruff       0.15.20
+uv         0.11.32

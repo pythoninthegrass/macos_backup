@@ -1,0 +1,90 @@
+# restic --exclude-file for my-mac full-$HOME backup
+# Patterns are relative to $HOME unless they start with /.
+# restic expands $HOME at backup time.
+
+# --- Runtimes and packages (reinstallable via mise/brew) ---
+$HOME/.local/share/mise
+$HOME/.local/bin
+$HOME/.asdf
+$HOME/.cargo
+$HOME/.rustup
+$HOME/.npm
+$HOME/.npm-global
+$HOME/.bun
+$HOME/.yarn
+$HOME/go
+$HOME/gems
+$HOME/.gradle
+$HOME/.m2
+$HOME/.pub-cache
+$HOME/.nuget
+$HOME/.dotnet
+$HOME/.flutter
+$HOME/.dart-tool
+$HOME/.cocoapods
+$HOME/.swiftpm
+$HOME/.platformio
+$HOME/.android
+$HOME/.nix-profile
+$HOME/.homebrew
+$HOME/.cache
+$HOME/.krew
+$HOME/.tenv
+$HOME/.vagrant.d
+
+# --- VMs, local models, containers ---
+$HOME/OrbStack
+$HOME/.orbstack
+$HOME/.tart
+$HOME/.lume
+$HOME/.lima
+$HOME/.ollama
+$HOME/.lmstudio
+$HOME/.unsloth
+$HOME/.EasyOCR
+$HOME/.llamafile
+
+# --- Cloud-synced (lives elsewhere already) ---
+$HOME/Dropbox
+$HOME/iCloud
+$HOME/owncloud
+$HOME/Library/CloudStorage
+$HOME/Library/Mobile Documents
+
+# --- Skipped by choice ---
+$HOME/Music
+$HOME/actions-runner*
+$HOME/.Trash
+$HOME/.claude_sh_test_*
+$HOME/.claude.json.tmp.*
+
+# --- Build artifacts, anywhere ---
+node_modules
+.venv
+venv
+__pycache__
+target
+build
+dist
+.next
+.terraform
+DerivedData
+
+# --- Library: default-deny, then keep a short list ---
+$HOME/Library/*
+!$HOME/Library/Keychains
+!$HOME/Library/Preferences
+!$HOME/Library/Application Support
+
+# Re-exclude the large/reinstallable app support dirs kept open above
+$HOME/Library/Application Support/Claude
+$HOME/Library/Application Support/CrossOver
+$HOME/Library/Application Support/Steam
+$HOME/Library/Application Support/Battle.net
+$HOME/Library/Application Support/Dropbox
+$HOME/Library/Application Support/com.apple.container
+$HOME/Library/Application Support/com.apple.wallpaper
+$HOME/Library/Application Support/*/Cache*
+$HOME/Library/Application Support/*/GPUCache
+$HOME/Library/Application Support/*/Code Cache
+$HOME/Library/Application Support/*/Service Worker/CacheStorage

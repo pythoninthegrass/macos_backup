@@ -1,0 +1,32 @@
+[project]
+name = "macos-backup"
+version = "0.1.0"
+authors = [
+    { name = "pythoninthegrass", email = "4097471+pythoninthegrass@users.noreply.github.com" }
+]
+requires-python = ">=3.13,<3.14"
+
+dependencies = [
+  "jinja2>=3.1.0",
+  "python-decouple>=3.8",
+  "rich>=13.9.0",
+  "sh>=2.2.2",
+]
+
+[project.scripts]
+mb = "macos_backup.cli:run"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3.0",
+]
+
+[tool.uv]
+exclude-newer = "2026-10-31T00:00:00Z"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["uv_build>=0.11.0,<0.12.0"]
+build-backend = "uv_build"
