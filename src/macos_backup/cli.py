@@ -1,4 +1,5 @@
-"""restic backup wrapper: my-mac -> Synology (syn) over SFTP.
+"""
+restic backup wrapper: macOS -> NAS over SFTP.
 
 Usage:
     mb init
